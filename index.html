@@ -22,19 +22,19 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         /* Enhanced Header - Keep Orange for Main CTA */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            box-shadow: 0 1px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
-            top: -15px;
+            top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(46, 166, 212, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             margin: 0;
             padding: 0;
         }
@@ -42,22 +42,21 @@
         nav {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            padding: 0;
-            min-height: 30px;
+            align-items: center;
+            padding: 20px 0;
+            min-height: 70px;
         }
 
         .logo {
             display: flex;
-            align-items: baseline;
+            align-items: center;
         }
 
         .logo-image {
-            height: 60px;
+            height: 55px;
             width: auto;
             transition: transform 0.3s ease;
             margin-right: 0.5rem;
-            transform: translateY(12px);
         }
 
         .logo-image:hover {
@@ -67,9 +66,10 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
             margin: 0;
+            padding: 0;
         }
 
         .nav-links a {
@@ -78,7 +78,6 @@
             font-weight: 500;
             font-size: 15px;
             transition: color 0.3s;
-            line-height: 1;
         }
 
         .nav-links a:hover {
@@ -87,7 +86,7 @@
 
         .header-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             align-items: center;
         }
 
@@ -96,48 +95,29 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
-            line-height: 1;
         }
 
         .get-started {
             background: linear-gradient(135deg, #FF9A56, #B565A7);
             color: white;
-            padding: 8px 24px;
+            padding: 7px 24px;
             border-radius: 0;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(255, 154, 86, 0.3);
+            transition: opacity 0.3s ease;
             position: relative;
-            overflow: hidden;
-            margin-right: 10px;
-        }
-
-        .get-started::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .get-started:hover::before {
-            left: 100%;
+            display: inline-block;
         }
 
         .get-started:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 154, 86, 0.4);
+            opacity: 0.9;
         }
 
         /* Enhanced Hero Section with Multi-Color Approach */
         .hero {
             background: linear-gradient(135deg, #f8fafc 0%, #fef7ed 25%, #f0f9ff 75%, #e0f2fe 100%);
-            padding: 100px 0 80px;
+            padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
         }
