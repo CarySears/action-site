@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourCompany.AI - Behavioral Science + AI Marketing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 8px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: #6b7280;
+            display: block;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6b7280;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0891b2;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .log-in {
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .get-started {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .get-started:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            display: inline-flex;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .highlight {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-dashboard {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .voice-demo {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .voice-demo:hover {
+            transform: translateY(-2px);
+        }
+
+        .roi-badge {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            font-weight: bold;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .dashboard-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0891b2;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .insight-box {
+            background: #f0f9ff;
+            border: 1px solid #0891b2;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .insight-header {
+            font-weight: 600;
+            color: #0891b2;
+            margin-bottom: 0.5rem;
+        }
+
+        .live-indicator {
+            color: #10b981;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card.featured {
+            border: 2px solid #f59e0b;
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #f59e0b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .evidence-badge {
+            background: #e5e7eb;
+            color: #6b7280;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #6b7280;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #06b6d4;
+            font-weight: bold;
+        }
+
+        /* Psychology Foundation */
+        .psychology {
+            padding: 80px 0;
+            background: #1f2937;
+            color: white;
+        }
+
+        .psychology .section-header h2 {
+            color: white;
+        }
+
+        .psychology .section-header p {
+            color: #9ca3af;
+        }
+
+        .psychology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .psychology-card {
+            background: #374151;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .psychology-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .psychology-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .psychology-card p {
+            color: #d1d5db;
+        }
+
+        /* Demo Section */
+        .demo {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e40af, #1d4ed8);
+            color: white;
+            text-align: center;
+        }
+
+        .demo h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .demo p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .demo-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .demo-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .demo-video {
+            width: 100%;
+            height: 300px;
+            background: #000;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .accuracy-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-rating {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .result-badge {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #06b6d4;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .demo-options {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-icon">🧠</div>
+                    <div>
+                        YourCompany.AI
+                        <span class="logo-subtitle">Behavioral Science + AI Marketing</span>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <a href="#login" class="log-in">Log In</a>
+                    <a href="#start" class="get-started">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span>Behavioral Science + AI Marketing</span>
+                    </div>
+                    <h1>
+                        Behavioral<br>
+                        Science + AI<br>
+                        <span class="highlight">Marketing<br>
+                        Automation</span>
+                    </h1>
+                    <p>We combine behavioral science with human-centered AI to create marketing systems that actually convert. Our intelligent automation nurtures leads through the entire decision journey using scientific principles, not just demographics. <strong>Plus AEO (Answer Engine Optimization) to dominate AI search engines like ChatGPT.</strong></p>
+                </div>
+                
+                <div class="hero-dashboard">
+                    <div class="roi-badge">
+                        ROI<br>347%
+                    </div>
+                    
+                    <div class="voice-demo">
+                        🎙️ Voice AI Demo
+                        <span>Experience behavioral science in action!</span>
+                        →
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="dashboard-header">
+                            <div class="dashboard-icon">📊</div>
+                            <div>
+                                <strong>Conversion Analytics</strong>
+                                <div style="font-size: 0.875rem; color: #6b7280;">YourCompany.AI Dashboard</div>
+                            </div>
+                            <div style="margin-left: auto;">
+                                <span class="live-indicator">● Live Data</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-value">247%</div>
+                                <div class="metric-label">Conversion Increase</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">89%</div>
+                                <div class="metric-label">AI Search Visibility</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">156</div>
+                                <div class="metric-label">New Customers</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">4.9★</div>
+                                <div class="metric-label">Satisfaction</div>
+                            </div>
+                        </div>
+
+                        <div class="insight-box">
+                            <div class="insight-header">🧠 Behavioral Science Insights</div>
+                            <div style="font-size: 0.875rem; color: #0891b2; font-weight: 600;">Decision Point Analysis</div>
+                            <div style="margin-top: 0.5rem; font-size: 0.875rem;">
+                                ✅ Conversion friction reduced by 42% using behavioral triggers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🧠 Behavioral Science + AI Solutions</div>
+                <h2>Complete Marketing Automation with <span class="highlight">Scientific Principles</span></h2>
+                <p>Our behavioral science-driven AI solutions handle every aspect of customer acquisition and retention, using research-based insights about how people actually make decisions.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="evidence-badge">Evidence-Based</div>
+                    <div class="service-icon">🧠</div>
+                    <h3>Behavioral Science Strategy</h3>
+                    <p>Research-based marketing strategy using experimental psychology and behavioral economics to understand how your customers actually make decisions.</p>
+                    <ul class="service-features">
+                        <li>Decision journey mapping</li>
+                        <li>Behavioral friction analysis</li>
+                        <li>Cognitive bias identification</li>
+                        <li>Persuasion architecture</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="evidence-badge">Evidence-Based</div>
+                    <div class="service-icon">💬</div>
+                    <h3>AI Conversation Systems</h3>
+                    <p>Intelligent conversation systems that engage, qualify, and nurture leads using behavioral science principles and natural language processing.</p>
+                    <ul class="service-features">
+                        <li>Website chat optimization</li>
+                        <li>Lead qualification</li>
+                        <li>Behavioral response patterns</li>
+                        <li>24/7 intelligent engagement</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="evidence-badge">Evidence-Based</div>
+                    <div class="service-icon">📅</div>
+                    <h3>Automated Nurturing</h3>
+                    <p>Intelligent lead nurturing systems with behavioral triggers, automated follow-ups, and conversion optimization.</p>
+                    <ul class="service-features">
+                        <li>Behavioral email sequences</li>
+                        <li>Multi-channel follow-up</li>
+                        <li>Psychological trigger points</li>
+                        <li>Conversion optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="featured-badge">Critical for 2025</div>
+                    <div class="evidence-badge">Future-Critical</div>
+                    <div class="service-icon">🔍</div>
+                    <h3>SEO & AEO</h3>
+                    <p>Critical: 60% of searches are now AI-powered in 2025. Most businesses still aren't prepared for AI search engines. Optimize for both traditional search engines AND AI-powered search. AEO involves optimizing your content to be effectively understood by AI systems like ChatGPT and voice assistants, ensuring your business is recommended when people ask for products or services like yours.</p>
+                    <ul class="service-features">
+                        <li>Traditional SEO optimization</li>
+                        <li>AI search engine optimization (AEO)</li>
+                        <li>Voice search optimization</li>
+                        <li>Featured snippet targeting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="evidence-badge">Evidence-Based</div>
+                    <div class="service-icon">🎯</div>
+                    <h3>Behavioral Landing Pages</h3>
+                    <p>Conversion-optimized pages built using behavioral psychology principles to turn visitors into customers.</p>
+                    <ul class="service-features">
+                        <li>Conversion psychology design</li>
+                        <li>A/B testing automation</li>
+                        <li>Behavioral triggers</li>
+                        <li>Mobile optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="evidence-badge">Evidence-Based</div>
+                    <div class="service-icon">📈</div>
+                    <h3>Conversion Optimization</h3>
+                    <p>Scientific approach to improving conversion rates using behavioral insights, experimental testing, and AI-powered analytics.</p>
+                    <ul class="service-features">
+                        <li>Behavioral analysis</li>
+                        <li>Friction point identification</li>
+                        <li>Systematic testing</li>
+                        <li>Continuous improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psychology Foundation -->
+    <section class="psychology">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🧠 Behavioral Science Foundation</div>
+                <h2>Marketing Built on <span class="highlight">Human Psychology</span></h2>
+                <p>Every element of our AI systems is designed using proven behavioral science principles. We don't just automate—we optimize for human psychology and decision-making.</p>
+            </div>
+            
+            <div class="psychology-grid">
+                <div class="psychology-card">
+                    <div class="psychology-icon">🧠</div>
+                    <h3>Cognitive Psychology</h3>
+                    <p>We understand how customers process information and make decisions about products and services.</p>
+                </div>
+                <div class="psychology-card">
+                    <div class="psychology-icon">❤️</div>
+                    <h3>Social Psychology</h3>
+                    <p>Leveraging social proof and trust signals to overcome hesitation and build confidence in purchase decisions.</p>
+                </div>
+                <div class="psychology-card">
+                    <div class="psychology-icon">👁️</div>
+                    <h3>Perception & Attention</h3>
+                    <p>Designing interfaces and content that capture attention and guide focus to the most important elements.</p>
+                </div>
+                <div class="psychology-card">
+                    <div class="psychology-icon">💰</div>
+                    <h3>Behavioral Economics</h3>
+                    <p>Understanding how people make financial decisions and removing barriers to purchase.</p>
+                </div>
+                <div class="psychology-card">
+                    <div class="psychology-icon">🎯</div>
+                    <h3>Conversion Psychology</h3>
+                    <p>Applying persuasion principles ethically to help customers take the first step toward purchase.</p>
+                </div>
+                <div class="psychology-card">
+                    <div class="psychology-icon">📊</div>
+                    <h3>Neuromarketing</h3>
+                    <p>Using insights from neuroscience to create marketing that resonates on a deeper, emotional level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo">
+        <div class="container">
+            <h2>Experience Our <span class="highlight">Voice AI Front Desk</span> in Action</h2>
+            <p>See how our AI handles real patient conversations with empathy, intelligence, and HIPAA compliance. Try both the demo video and live phone call.</p>
+            
+            <div class="demo-container">
+                <div class="demo-options">
+                    <a href="#" class="demo-btn">
+                        ▶️ Watch Demo Video<br>
+                        <small>See AI in action</small>
+                    </a>
+                    <a href="#" class="demo-btn">
+                        📞 Call Live Demo<br>
+                        <small>Talk to our AI</small>
+                    </a>
+                </div>
+                
+                <div class="demo-video">
+                    <div class="accuracy-badge">97% Accuracy</div>
+                    <div class="play-button">▶️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="case-studies" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">⭐ Client Success Stories</div>
+                <h2>Real Results from <span class="highlight">Real Businesses</span></h2>
+                <p>See how businesses across industries are transforming their marketing with our behavioral science and AI solutions.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ (5.0)</div>
+                    <div class="testimonial-text">
+                        "The HIPAA-compliant AI system they built for us has been revolutionary. Not only did it reduce our no-show rates by 89%, but it also handles crisis calls with remarkable sensitivity. The behavioral science approach they use truly understands patient psychology."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DR</div>
+                        <div class="author-info">
+                            <h4>Dr. Michael Rodriguez</h4>
+                            <p>Psychiatrist<br>Behavioral Health Associates</p>
+                        </div>
+                    </div>
+                    <div class="result-badge">✅ Result: 89% reduction in no-shows</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ (5.0)</div>
+                    <div class="testimonial-text">
+                        "YourCompany.AI transformed our marketing completely. Their behavioral science approach combined with AI automation increased our course enrollment rates by 239% in just 60 days. Students often comment on how personalized the experience feels."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Director of Marketing<br>Tech Academy</p>
+                        </div>
+                    </div>
+                    <div class="result-badge">✅ Result: 239% conversion increase</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ (5.0)</div>
+                    <div class="testimonial-text">
+                        "Working with this team has been incredible. They bring so much positive energy and truly understand the psychology of luxury travel decisions. Our booking rate increased by 172% and our average order value went up by 52%!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CB</div>
+                        <div class="author-info">
+                            <h4>Christina Breza</h4>
+                            <p>CEO<br>Vespa Tours Italia</p>
+                        </div>
+                    </div>
+                    <div class="result-badge">✅ Result: 172% booking increase</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Get Started Today</h3>
+                    <p>Ready to transform your marketing with behavioral science and AI? Let's discuss how we can help you achieve breakthrough results.</p>
+                    <p><strong>Email:</strong> hello@yourcompany.ai</p>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">Behavioral Science Strategy</a>
+                    <a href="#services">AI Conversation Systems</a>
+                    <a href="#services">Automated Nurturing</a>
+                    <a href="#services">SEO & AEO</a>
+                    <a href="#services">Landing Page Optimization</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#about">About</a>
+                    <a href="#case-studies">Case Studies</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#">Behavioral Science Guide</a>
+                    <a href="#">AEO Optimization</a>
+                    <a href="#">AI Marketing Playbook</a>
+                    <a href="#">Free Consultation</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 YourCompany.AI. All rights reserved. | Behavioral Science + AI Marketing</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
