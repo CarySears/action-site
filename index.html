@@ -43,30 +43,19 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1f2937;
         }
 
-        .logo-icon {
-            width: 40px;
+        .logo-image {
             height: 40px;
-            background: linear-gradient(135deg, #79C5C7, #2EA6D4);
-            border-radius: 8px;
-            margin-right: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
+            width: auto;
+            transition: transform 0.3s ease;
         }
 
-        .logo-subtitle {
-            font-size: 0.75rem;
-            color: #6b7280;
-            display: block;
-            font-weight: 400;
+        .logo-image:hover {
+            transform: scale(1.05);
         }
+
+
 
         .nav-links {
             display: flex;
@@ -692,11 +681,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <div class="logo-icon">🧠</div>
-                    <div>
-                        ActionPotential.AI
-                        <span class="logo-subtitle">Behavioral Science + AI Marketing</span>
-                    </div>
+                    <img src="logotrans.png" alt="ActionPotential.AI" class="logo-image">
                 </div>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
