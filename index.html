@@ -27,24 +27,21 @@
 
         /* Enhanced Header - Keep Orange for Main CTA */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            margin: 0;
-            padding: 0;
+            height: 70px;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 0;
-            min-height: 68px;
+            height: 100%;
+            padding: 0;
         }
 
         .logo {
@@ -54,32 +51,31 @@
         }
 
         .logo-image {
-            height: 48px;
+            height: 40px;
             width: auto;
             transition: transform 0.3s ease;
-            margin-right: 0.5rem;
         }
 
         .logo-image:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.75rem;
+            gap: 2rem;
             align-items: center;
             margin: 0;
             padding: 0;
+            height: 100%;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #6b7280;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 15px;
             transition: color 0.3s;
-            letter-spacing: 0.01em;
         }
 
         .nav-links a:hover {
@@ -88,31 +84,27 @@
 
         .header-actions {
             display: flex;
-            gap: 1.25rem;
+            gap: 1.5rem;
             align-items: center;
+            height: 100%;
         }
 
         .log-in {
             color: #6b7280;
             text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 0.01em;
+            font-size: 15px;
         }
 
         .get-started {
             background: linear-gradient(135deg, #FF9A56, #B565A7);
             color: white;
-            padding: 8px 30px;
+            padding: 10px 30px;
             border-radius: 0;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.02em;
+            font-size: 15px;
             transition: all 0.3s ease;
-            position: relative;
-            display: inline-block;
-            box-shadow: 0 2px 8px rgba(255, 154, 86, 0.2);
         }
 
         .get-started:hover {
